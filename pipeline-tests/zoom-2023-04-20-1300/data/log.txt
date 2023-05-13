@@ -1,0 +1,32 @@
+
+8468549 packets captured
+8468902 packets received by filter
+0 packets dropped by kernel
+ring buffer use: 0.0% of 1024 MB
+../build/zoom_flows -i zoom000.pcap -f flows.csv -t types.csv -r rate.csv -z zoom000.zpkt
+- input files: 1
+- total pkts: 8468549
+- zoom pkts: 8011644
+- zoom flows: 294
+- runtime [s]: 6.892218
+- wrote flow summary to flows.csv
+- wrote type summary to types.csv
+- wrote rate summary to rate.csv
+- wrote 8011644 filtered packets to zoom000.zpkt
+../build/zoom_rtp -i zoom000.zpkt -p pkts.csv -s streams.csv -f frames.csv -t stats.csv
+- 8011644 packets in trace
+- pkts: 8011644 packets
+- runtime [s]: 95.3467
+- wrote packets to pkts.csv
+- wrote streams to streams.csv
+- wrote frames to frames.csv
+- wrote stats to stats.csv
+../build/zoom_meetings -i zoom000.zpkt -m meetings.csv -u unique.csv
+ - wrote unique streams to unique.csv
+ - wrote meetings to meetings.csv
+ - total pkts: 8011644
+ - media pkts: 6961215
+ - media streams: 211
+ - unique streams: 211
+ - meetings: 19
+ - runtime: 8.84665 s
